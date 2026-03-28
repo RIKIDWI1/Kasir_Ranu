@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kasir Kantin Ranu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        padding: 20px;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    h1 { text-align: center; color: #c0392b; }
+    h2 { margin-top: 20px; }
+
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+    .menu-item:hover {
+        background: #ecf0f1;
+    }
+
+    .cart {
+        margin-top: 30px;
+        padding: 15px;
+        background: #fafafa;
+        border-radius: 10px;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .total {
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        border: none;
+        background: #e74c3c;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Kasir Kantin Ranu</h1>
+
+    <h2>Aneka Mie</h2>
+    <div class="menu-item" onclick="tambah('Mie Ranu', 5000)">Mie Ranu Kuah / Goreng - 5K</div>
+    <div class="menu-item" onclick="tambah('Mie Ranu Spesial', 9000)">Mie Ranu Spesial Kuah / Goreng - 9K</div>
+    <div class="menu-item" onclick="tambah('Pop Mie Jumbo', 8000)">Pop Mie Jumbo - 8K</div>
+    <div class="menu-item" onclick="tambah('Pop Mie Mini', 5000)">Pop Mie Mini - 5K</div>
+    <div class="menu-item" onclick="tambah('Pop Mie Gledek', 8000)">Pop Mie Gledek/Dower - 8K</div>
+    <div class="menu-item" onclick="tambah('Indomie Jumbo', 8000)">Indomie Jumbo Goreng - 8K</div>
+    <div class="menu-item" onclick="tambah('Indomie Jumbo Spesial', 12000)">Indomie Jumbo Goreng Spesial - 12K</div>
+    <div class="menu-item" onclick="tambah('Indomie Kuah', 10000)">Indomie Kuah - 10K</div>
+
+    <h2>Aneka Nasi</h2>
+    <div class="menu-item" onclick="tambah('Nasi Ayam Crispy', 14000)">Nasi Ayam Crispy - 14K</div>
+    <div class="menu-item" onclick="tambah('Nasi Mercon', 15000)">Nasi Mercon Daging - 15K</div>
+    <div class="menu-item" onclick="tambah('Nasi Soto', 12000)">Nasi Soto Ayam - 12K</div>
+    <div class="menu-item" onclick="tambah('Nasi Goreng', 7000)">Nasi Goreng Sosis - 7K</div>
+    <div class="menu-item" onclick="tambah('Nasi Telur', 9000)">Nasi Telur Kriting - 9K</div>
+    <div class="menu-item" onclick="tambah('Telur Ceplok', 4000)">Extra Telur Ceplok - 4K</div>
+
+    <h2>Jajanan</h2>
+    <div class="menu-item" onclick="tambah('Dimsum', 7000)">Dimsum - 7K</div>
+    <div class="menu-item" onclick="tambah('Pentol', 5000)">Pentol - 5K</div>
+    <div class="menu-item" onclick="tambah('Cilok', 3000)">Cilok - 3K</div>
+    <div class="menu-item" onclick="tambah('Krupuk Pecel', 6000)">Krupuk Pecel - 6K</div>
+    <div class="menu-item" onclick="tambah('Jajan', 1000)">Jajan - 1k</div>
+    <div class="menu-item" onclick="tambah('Jajan', 2000)">Jajan - 2k</div>
+    <div class="menu-item" onclick="tambah('Jajan', 2500)">Jajan - 2,5k</div>
+    <div class="menu-item" onclick="tambah('Jajan', 4000)">Jajan - 4k</div>
+
+    <h2>Minuman panas</h2>
+    <div class="menu-item" onclick="tambah('Teh panas', 3000)">Teh panas - 3K</div>
+    <div class="menu-item" onclick="tambah('Jeruk', 4000)">Jeruk - 4K</div>
+    <div class="menu-item" onclick="tambah('Kopi Hitam', 4000)">Kopi Hitam - 4K</div>
+    <div class="menu-item" onclick="tambah('Goodday', 4000)">Goodday Cappucino - 4K</div>
+    <div class="menu-item" onclick="tambah('White Kaffe', 4000)">White Kaffe - 4K</div>
+    <div class="menu-item" onclick="tambah('Susu Jahe', 4000)">Susu Jahe - 4K</div>
+    <div class="menu-item" onclick="tambah('Susu Coklat', 5000)">Susu Coklat - 5K</div>
+    <div class="menu-item" onclick="tambah('Thai Tea', 6000)">Thai Tea - 6K</div>
+    <div class="menu-item" onclick="tambah('Air Mineral', 3000)">Air Mineral - 3K</div>
+    
+    <h2>Minuman Dingin</h2>
+    <div class="menu-item" onclick="tambah('es Teh', 4000)">es Teh - 4k</div>
+    <div class="menu-item" onclick="tambah('es Jeruk', 5000)">es Jeruk - 5k</div>
+    <div class="menu-item" onclick="tambah('es Goodday', 5000)">es Goodday - 5k</div>
+    <div class="menu-item" onclick="tambah('es White Kaffe', 5000)">es White Kaffe - 5k</div>
+    <div class="menu-item" onclick="tambah('es Susu Coklat', 6000)">es Susu Coklat - 6k</div>
+
+    
+    <div class="cart">
+        <h2>Keranjang</h2>
+        <div id="list"></div>
+
+        <div class="total">Total Item: <span id="jumlahItem">0</span></div>
+        <div class="total">Total: Rp <span id="total">0</span></div>
+
+        <button onclick="reset()">Reset</button>
+    </div>
+</div>
+
+<script>
+    let total = 0;
+    let jumlahItem = 0;
+
+    function tambah(nama, harga) {
+        total += harga;
+        jumlahItem++;
+
+        let list = document.getElementById("list");
+        let item = document.createElement("div");
+        item.className = "cart-item";
+        item.innerHTML = `<span>${nama}</span><span>Rp ${harga}</span>`;
+        list.appendChild(item);
+
+        document.getElementById("total").innerText = total;
+        document.getElementById("jumlahItem").innerText = jumlahItem;
+    }
+
+    function reset() {
+        total = 0;
+        jumlahItem = 0;
+
+        document.getElementById("list").innerHTML = "";
+        document.getElementById("total").innerText = 0;
+        document.getElementById("jumlahItem").innerText = 0;
+    }
+</script>
+
+</body>
+</html>
